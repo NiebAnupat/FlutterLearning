@@ -1,31 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:http/http.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
   runApp(MyApp());
 }
 
-// Create the widget for the application
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "My Flutter App",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("My Flutter App"),
-        ),
-        body: Center(
-          child: Image(
-            image: NetworkImage(
-                "https://www.codemobiles.co.th/online/images/course_shortcut_flutter.png"),
-          )
-        ),
-      ),
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  void initState() {
+    super.initState();
+    print("Get Exchange Rate......");
+  }
+
+  void getExchangeRate() {
+    
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "โปรแกรมแลกเปลี่ยนสกุลเงิน",
+        ),
+      ),
+      body: Text("Flutter Demo"),
     );
   }
 }
